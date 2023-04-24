@@ -1,0 +1,184 @@
+<!--
+    ITW - tvorba webových strániek, projekt 2
+    Karolína Pirohová, xpiroh02
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi, I am Karolína</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="messageSent">
+        <div>
+            <span>thank you for your message!</span>
+        </div>
+    </div>
+    <header>
+        <div id="headerWrapper">
+            <div class="headerNavigation">
+                <nav>
+                    <ul>
+                        <li><a href="#headerWrapper">ABOUT ME</a></li>
+                        <li><a href="#myServices">MY SERVICES</a></li>
+                        <li><a href="#myRecentProjects">MY RECENT PROJECTS</a></li>
+                        <li><a href="#contactMe">CONTACT ME</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="headerLogo">
+                <div class="animationWrapper">
+                    <h1>
+                        <a href="https://kapolious.github.io/"> Hi, I am Karolína </a>
+                    </h1>
+                </div>
+                <div>your friendly knitter.</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="centerPage">
+            <section id="aboutMe">
+                <div id="aboutMeWrapper">
+                    <div class="left-text">
+                        <h2>ABOUT ME</h2>
+                        <p>As a computer science student, I find knitting to be a therapeutic break from my screen-based
+                            work.
+                            The manual work of knitting allows me to slow down and focus on the tangible task at hand.
+                        </p>
+                        <br>
+                        <p>
+                            Despite their apparent differences, knitting and computer science share many similarities.
+                            Both require attention to detail, patience, and problem-solving skills.
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img id="face" src="img/me.png" alt="image_of_me" onmouseover="doodlesOn();" onmouseout="doodlesOff();">
+                    </div>
+                    <div class="right-text">
+                        <span>years of knitting</span>
+                        <p>3</p>
+                        <span>number of completed projects</span>
+                        <p>25</p>
+                        <span>go-to fibre</span>
+                        <p>merino wool</p>
+                        <span>number of happy customers</span>
+                        <p>12</p>
+                    </div>
+                </div>
+            </section>
+            <section id="myServices">
+                <div id="myServicesWrapper">
+                    <div class="left-text">
+                        <div class="heading">
+                            <h2>MY SERVICES</h2>
+                        </div>
+                        <p>I offer custom knitting services for a variety of items, including handmade sweaters, vests,
+                            and accessories like shawls, hats, socks, and mittens. Let me create a unique, high-quality
+                            piece tailored to your style and preferences.
+                        </p>
+                        <button onclick="scrollToContact()">contact me for more information</button>
+                    </div>
+                    <div class="right-table">
+                        <div class="table-item">
+                            <img src="/img/svetericon.png" alt="sveter_icon">
+                            <div>
+                                <p>cozy sweaters</p>
+                            </div>
+                            <div>
+                                <p>Keep warm and look great in a hand-knit sweater made just for you.</p>
+                            </div>
+                        </div>
+                        <div class="table-item">
+                            <img src="/img/vestaicon.png" alt="vesta_icon">
+                            <div>
+                                <p>stylish vests</p>
+                            </div>
+                            <div>
+                                <p>A hand-knit vest can add so much personality to an outfit. Let me create one for you
+                                    that's both stylish and practical.</p>
+                            </div>
+                        </div>
+                        <div class="table-item">
+                            <img src="/img/accessoriesicon.png" alt="accessories_icon">
+                            <div>
+                                <p>versatile accessories</p>
+                            </div>
+                            <div>
+                                <p>Whether you need a shawl, hat, socks, or mittens, I can hand-knit you an accessory
+                                    that's both functional and fashionable.</p>
+                            </div>
+                        </div>
+                        <div class="table-item">
+                            <img src="/img/summerknitsicon.png" alt="summerknits_icon">
+                            <div>
+                                <p>breezy summer knits</p>
+                            </div>
+                            <div>
+                                <p>Stay stylish in the heat with a handmade summer knit. From tank tops all the way to
+                                    lightweight shawls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="myRecentProjects">
+                <div id="myRecentProjectsWrapper">
+                    <div class="heading">
+                        <h2>MY RECENT PROJECTS</h2>
+                        <p>Take a peek at what I've been knitting lately.</p>
+                    </div>
+                    <div class="imgWrapper">
+                        <div><img src="/img/sveter.jpg" alt="sveter"></div>
+                        <div><img src="/img/rukavice.jpg" alt="rukavice"></div>
+                        <div><img src="/img/vesta.jpg" alt="vesta"></div>
+                        <div><img src="/img/rukavice2.jpg" alt="rukavice2"></div>
+                        <div><img src="/img/sveter2.jpg" alt="sveter2"></div>
+                        <div><img src="/img/ciapka.jpg" alt="ciapka"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="contactMe">
+                <h2>let's get in touch and create something together</h2>
+                    <form id="contactForm" method="post" onsubmit="popup(); return false;">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <textarea id="message" name="message" rows="8" placeholder="Your message..." required></textarea>
+                        <button type="submit" onclick="submitForm()">SEND MESSAGE</button>
+                    </form>
+              
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div id="footerWrapper">
+            <section class="goodbye">
+                <div>
+                    <h2>crafting custom designs for unique individuals</h2>
+                </div>
+            </section>
+            <div class="networks">
+                <span class="instagram"><a href="https://www.instagram.com/kapolious/"><i
+                            class="fab fa-instagram"></i></a></span>
+                <span class="linkedin"><a href="https://www.linkedin.com/in/karol%C3%ADna-pirohov%C3%A1-827866267/"><i
+                            class="fab fa-linkedin"></i></a></span>
+                <span class="facebook"><a href="https://www.facebook.com/karolina.pirohova/"><i
+                            class="fab fa-facebook"></i></a></span>
+                </div>
+            <div id="rights">
+                <p>Copyright © Karolína Pirohová 2023. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

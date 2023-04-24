@@ -1,0 +1,488 @@
+/*
+ *  ITW - tvorba webových strániek, projekt 2 
+ *  Karolína Pirohová, xpiroh02
+ */
+
+:root {
+    --base: #F4F3F3;
+    --light_teal: #6C9A8B;
+    --light_teal_rgb: rgba(108, 154, 139, 0.7);
+    --betterwhite: #F9F9F9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: Lucidatyoewriter, monospace;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--base);
+    font-size: 12px;
+}
+
+main {
+    margin: auto;
+    min-height: calc(100vh - 180px);
+}
+
+h2 {
+    padding: 20px 0;
+}
+
+
+
+/* MESSAGE SENT POPUP */
+
+#messageSent {
+    visibility: hidden;
+    position: fixed;
+    width: 220px;
+    height: 70px;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: var(--light_teal);
+    opacity: .8;
+    padding: 10px;
+    border-radius: 180px / 190px;
+}
+
+#messageSent div span {
+    color: var(--betterwhite);
+}
+
+#messageSent.open {
+    visibility: visible;
+    position: fixed;
+    z-index: 1;
+    margin-top: 80px;
+    opacity: .8;
+    animation-duration: 0.5s;
+}
+
+
+
+/* ---------- HEADER ---------- */
+
+#headerWrapper {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+/* ---------- HEADER - NAVIGATION ---------- */
+
+.headerNavigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--base);
+    padding: 10px;
+    height: 80px;
+    z-index: 1;
+}
+
+.headerNavigation nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    border-radius: 180px / 190px;
+    background-color: var(--light_teal);
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.headerNavigation li {
+    padding: 6px 20px;
+}
+
+.headerNavigation li:hover {
+    border-radius: 180px / 190px;
+    background-color: var(--base);
+}
+
+.headerNavigation a {
+    color: var(--betterwhite);
+    text-decoration: none;
+}
+
+.headerNavigation li:hover a {
+    color: var(--light_teal);
+}
+
+
+
+/* ---------- HEADER - LOGO ---------- */
+
+.headerLogo {
+    padding: 60px;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.headerLogo h1 {
+    font-size: 80px;
+}
+
+.headerLogo a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ---------- MAIN ---------- */
+
+.centerPage {
+    text-align: center;
+}
+
+.centerPage section:not(:first-of-type) {
+    padding-top: 60px;
+}
+
+
+
+/* ---------- MAIN - ABOUT ME ---------- */
+
+#aboutMe {
+    background-color: var(--betterwhite);
+}
+
+#aboutMeWrapper {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.image img {
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    border: 3.5px solid var(--light_teal);
+    border-radius: 180px / 190px;
+    object-fit: cover;
+}
+
+.left-text {
+    text-align: left;
+}
+
+.left-text,
+.right-text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.right-text {
+    text-align: center;
+}
+
+.right-text p {
+    color: var(--light_teal);
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+/* ---------- MAIN - MY SERVICES ---------- */
+
+#myServicesWrapper {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myServicesWrapper .left-text {
+    text-align: center;
+}
+
+#myServicesWrapper .left-text h2,
+#myServicesWrapper .left-text p {
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+#myServicesWrapper .left-text button {
+    padding: 10px;
+    border-radius: 180px / 190px;
+}
+
+#myServicesWrapper .left-text button:hover {
+    background-color: var(--light_teal_rgb);
+    transition: all .5s ease;
+}
+
+.right-table {
+    flex: 2;
+    text-align: justify;
+    /* check this */
+    align-self: center;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-table img {
+    width: 80px;
+    height: 80px;
+}
+
+.table-item {
+    display: flex;
+    padding: 20px;
+    background-color: var(--base);
+    transition: background-color 0.4s;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-item div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-item div:nth-child(2) p {
+    font-size: 15px;
+    text-align: center;
+    padding-left: 20px;
+}
+
+.table-item:hover {
+    background-color: var(--light_teal_rgb);
+    transform: scale(1.05);
+    transition: all .5s ease;
+}
+
+.table-item:hover div:nth-child(2) {
+    font-weight: bold;
+}
+
+
+
+/* ---------- MAIN - MY RECENT PROJECTS ---------- */
+
+#myRecentProjectsWrapper {
+    margin: auto;
+    width: 70%;
+    padding-bottom: 50px;
+}
+
+#myRecentProjects .heading {
+    padding: 20px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.imgWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.imgWrapper img {
+    height: 300px;
+    width: 300px;
+    opacity: .8;
+    transition: all .5s ease;
+}
+
+.imgWrapper img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+
+/* ---------- MAIN - CONTACT ME ---------- */
+
+#contactMe {
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid --base;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+form button[type="submit"] {
+    background-color: rgba(108, 154, 139, 0.7);
+    color: var(--base);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 180px / 190px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    margin: auto;
+    background-color: var(--light_teal);
+    border-radius: 50%/100px 100px 0 0;
+    position: relative;
+}
+
+footer #footerWrapper {
+    height: 180px;
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--betterwhite);
+}
+
+footer .goodbye,
+.networks,
+.credits {
+    text-align: center;
+    width: 100%;
+}
+
+footer .goodbye h2 {
+    padding: 30px;
+    font-size: 15px;
+}
+
+footer .networks {
+    padding: 15px;
+}
+
+footer .networks span {
+    font-size: 15px;
+}
+
+footer #rights {
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    font-size: 10px;
+}
+
+footer a {
+    color: var(--betterwhite);
+}
+
+
+
+/* ---------- MEDIA QUERIES ----------*/
+@media screen and (max-width:768px) {
+
+    /* ----- HEADER-----*/
+    #headerWrapper {
+        width: 100%;
+    }
+
+    .headerNavigation li {
+        padding: 6px 10px;
+    }
+
+    .headerLogo {
+        overflow: hidden;
+    }
+
+    .headerLogo h1 {
+        font-size: 50px;
+    }
+
+    /* ----- MAIN - ABOUT ME -----*/
+    #aboutMeWrapper {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .left-text,
+    .right-text {
+        padding: 0 20px;
+        align-self: center;
+    }
+
+    /* ----- MAIN - MY SERVICES -----*/
+    #myServicesWrapper {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .table-item {
+        flex-direction: column;
+    }
+
+
+    /* ----- MAIN - MY RECENT PROJECTS -----*/
+    #myRecentProjectsWrapper {
+        width: 100%;
+    }
+
+    .imgWrapper {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .imgWrapper img {
+        height: 300px;
+        width: 300px;
+    }
+
+    /* ----- MAIN - CONTACT ME -----*/
+    #contactForm input[type="text"],
+    #contactForm input[type="email"],
+    #contactForm textarea {
+        width: 80%;
+    }
+
+    /* ----- FOOTER -----*/
+    footer #footerWrapper {
+        width: 100%;
+    }
+}
+
